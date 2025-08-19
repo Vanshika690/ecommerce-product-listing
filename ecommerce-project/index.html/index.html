@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>E-commerce Store</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>My Store</h1>
+    <nav>
+      <a href="#" onclick="showSection('home')">Home</a>
+      <a href="#" onclick="showSection('products')">Products</a>
+      <a href="#" onclick="showSection('details')">Product Details</a>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home">
+    <h2>Shop by Category</h2>
+    <div class="categories">
+      <button onclick="filterCategory('electronics')">Electronics</button>
+      <button onclick="filterCategory('clothing')">Clothing</button>
+      <button onclick="filterCategory('accessories')">Accessories</button>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" style="display:none;">
+    <h2>Products</h2>
+    <label>Filter by Price: 
+      <input type="range" id="priceRange" min="0" max="1000" value="1000">
+      <span id="priceValue">1000</span>
+    </label>
+    <div id="product-list"></div>
+  </section>
+
+  <!-- Product Details Section -->
+  <section id="details" style="display:none;">
+    <h2>Product Details</h2>
+    <div id="product-details"></div>
+    <button onclick="showSection('products')">Back to Products</button>
+  </section>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
